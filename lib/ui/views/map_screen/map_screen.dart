@@ -93,6 +93,7 @@ class DeliveryMapScreenState extends State<DeliveryMapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey2,
+      drawer: Drawer(),
       body: Stack(
         children: [
           GoogleMap(
@@ -140,9 +141,7 @@ class DeliveryMapScreenState extends State<DeliveryMapScreen> {
                 children: [
                   IconButton(
                     icon: Icon(Icons.menu, color: Colors.black),
-                    onPressed: () {
-                      // TODO: Open drawer or navigation menu
-                    },
+                    onPressed: () => scaffoldKey2.currentState?.openDrawer(),
                   ),
                   SizedBox(
                       width: 10), // Space between the icon and the search box

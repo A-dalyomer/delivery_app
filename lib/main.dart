@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:bloomdeliveyapp/services/service_locator.dart';
-import 'ui/views/splash.dart';
+import 'ui/views/splash_screen/splash.dart';
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();
@@ -264,7 +264,9 @@ class _MyAppState extends State<MyApp> {
           //contentPadding: EdgeInsetsDirectional.only(top: 16),
           //isDense: true,
           prefixStyle: Theme.of(context).textTheme.bodyMedium,
-        ), colorScheme: ColorScheme.fromSwatch(primarySwatch: bluecareColor).copyWith(background: tajribaBackground),
+        ),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: bluecareColor)
+            .copyWith(background: tajribaBackground),
       ),
       home: Splash(),
       navigatorObservers: [routeObserver],

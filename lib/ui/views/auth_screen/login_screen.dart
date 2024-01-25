@@ -1,6 +1,7 @@
+import 'package:bloomdeliveyapp/ui/views/auth_screen/forgot_password.dart';
+import 'package:bloomdeliveyapp/ui/views/map_screen/map_screen.dart';
+import 'package:bloomdeliveyapp/ui/views/auth_screen/register_screen.dart';
 
-import 'package:bloomdeliveyapp/ui/views/login_screen.dart';
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bloomdeliveyapp/business_logic/view_models/login/login_screen_viewmodel.dart';
@@ -8,23 +9,21 @@ import 'package:bloomdeliveyapp/main.dart';
 import 'package:bloomdeliveyapp/services/service_locator.dart';
 import 'package:provider/provider.dart';
 import 'package:bloomdeliveyapp/services/storage/local_storage_service.dart';
-import 'package:otp/otp.dart';
 
 //import 'package:bloomdeliveyapp/ui/views/main/main_navigation_screen.dart';
 
-class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  _RegisterState createState() => _RegisterState();
+  _LoginState createState() => _LoginState();
 }
 
-class _RegisterState extends State<Register> {
+class _LoginState extends State<Login> {
   LoginScreenViewModel loginScreenViewModel =
       serviceLocator<LoginScreenViewModel>();
   final LocalStorageService _localStorageService =
       serviceLocator<LocalStorageService>();
-
   final FocusNode myFocusNodeEmailLogin = FocusNode();
   final FocusNode myFocusNodePasswordLogin = FocusNode();
 
@@ -37,23 +36,11 @@ class _RegisterState extends State<Register> {
 
   TextEditingController loginUserNameController = TextEditingController();
   TextEditingController loginPasswordController = TextEditingController();
-  TextEditingController loginPasswordConfirmController =
-      TextEditingController();
-
   bool _obscureTextLogin = true;
 
   final formKey = GlobalKey<FormState>();
 
   bool _saving = false;
-
-  final FocusNode myFocusNodePhoneNumber = FocusNode();
-  TextEditingController signupPhoneNumberController = TextEditingController();
-  TextEditingController signupEmailController = TextEditingController();
-  final FocusNode myFocusNodeFullName = FocusNode();
-  TextEditingController signupFullNameController = TextEditingController();
-
-  bool _obscureTextConfirmPassword = true;
-  final FocusNode myFocusNodePasswordConfirm = FocusNode();
 
   @override
   void initState() {
@@ -78,6 +65,14 @@ class _RegisterState extends State<Register> {
           create: (context) => loginScreenViewModel,
           child: Consumer<LoginScreenViewModel>(
               builder: (context, loginScreenViewModel, child) {
+            if (loginScreenViewModel.isLoggedIn) {
+              _localStorageService.getMyProfile().then((profile) {
+                Future.microtask(
+                  () => Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => DeliveryMapScreen())),
+                );
+              });
+            }
             return Scaffold(
               body: Container(
                 margin: EdgeInsets.zero,
@@ -89,7 +84,7 @@ class _RegisterState extends State<Register> {
                   children: [
                     Padding(
                       padding: const EdgeInsetsDirectional.only(
-                        top: 16,
+                        top: 48,
                         start: 20,
                         bottom: 24,
                       ),
@@ -102,6 +97,18 @@ class _RegisterState extends State<Register> {
                         ),
                       ),
                     ),
+                    /*  Padding(
+                      padding: const EdgeInsetsDirectional.only(
+                          bottom: 48, start: 20),
+                      child: Container(
+                        height: 97,
+                        child: Image.asset(
+                          "assets/img/sila_logo_word.png",
+                          fit: BoxFit.scaleDown,
+                          //color: tajribaPrimary,
+                        ),
+                      ),
+                    ), */
                     _buildSignIn(context),
                   ],
                 ),
@@ -118,70 +125,44 @@ class _RegisterState extends State<Register> {
       key: formKey,
       child: Column(
         children: <Widget>[
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
-            child: TextFormField(
-              style: Theme.of(context).textTheme.bodyLarge,
-              focusNode: myFocusNodeFullName,
-              controller: signupFullNameController,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return "مطلوب";
-                }
-                return null;
-              },
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                prefixIcon: Icon(
-                  Icons.person_outline,
-                  color: Colors.grey,
+          /* Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.only(
+                  bottom: 48,
                 ),
-                hintText: "الإسم الكامل",
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
-            child: TextFormField(
-              style: Theme.of(context).textTheme.bodyLarge,
-              focusNode: myFocusNodeEmail,
-              controller: signupEmailController,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return "مطلوب";
-                } else if (!EmailValidator.validate(value)) {
-                  return "صيغة الإيميل غير صحيح";
-                } else {
-                  return null;
-                }
-              },
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.person_outline,
-                  color: Colors.grey,
+                child: Text(
+                  "Login",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      .copyWith(color: Colors.white),
                 ),
-                hintText: "الإيميل",
               ),
-            ),
-          ),
+            ],
+          ), */
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
             child: TextFormField(
               style: Theme.of(context).textTheme.bodyLarge,
-              focusNode: myFocusNodePhoneNumber,
-              controller: signupPhoneNumberController,
+              focusNode: myFocusNodeUserName,
+              controller: loginUserNameController,
+              keyboardType: TextInputType.phone,
+              maxLength: 9,
               validator: (value) {
                 if (value!.isEmpty) {
                   return "مطلوب";
                 } else if (value.length != 9) {
-                  return "رقم الهاتف غير صحيح" + " " + "يجب أن يكون 9 أرقام";
+                  return "رقم الهاتف غير صحيح" +
+                      " " +
+                      "الرجاء التأكد من الصياغة";
                 } else {
                   return null;
                 }
               },
-              keyboardType: TextInputType.phone,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 prefixIcon: Icon(
                   Icons.person_outline,
                   color: Colors.grey,
@@ -191,7 +172,7 @@ class _RegisterState extends State<Register> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 16, 16),
+            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 16, 16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -205,10 +186,7 @@ class _RegisterState extends State<Register> {
                     } else if (value.length < 4) {
                       return " كلمة المرور قصيرة جداً" +
                           "\n" +
-                          " يجب أن تكون 6 حروف على الأقل";
-                    } else if (loginPasswordController.text !=
-                        loginPasswordConfirmController.text) {
-                      return "كلمة المرور لا تتطابق ";
+                          "على الأقل 6 أحرف ";
                     } else {
                       return null;
                     }
@@ -235,53 +213,8 @@ class _RegisterState extends State<Register> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 16, 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                TextFormField(
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  focusNode: myFocusNodePasswordConfirm,
-                  controller: loginPasswordConfirmController,
-                  validator: (String? value) {
-                    if (value!.trim().isEmpty) {
-                      return "مطلوب";
-                    } else if (value.length < 4) {
-                      return " كلمة المرور قصيرة جدا" +
-                          "\n" +
-                          " يجب أن تكون 6 حروف على الأقل";
-                    } else if (loginPasswordController.text !=
-                        loginPasswordConfirmController.text) {
-                      return "كلمة المرور غير متطابقة ";
-                    } else {
-                      return null;
-                    }
-                  },
-                  obscureText: _obscureTextConfirmPassword,
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(
-                      Icons.lock_outline,
-                      color: Colors.grey,
-                    ),
-                    hintText: "تأكيد كلمة المرور",
-                    suffixIcon: GestureDetector(
-                      onTap: _togglePasswordConfirm,
-                      child: Icon(
-                        _obscureTextConfirmPassword
-                            ? FontAwesomeIcons.eye
-                            : FontAwesomeIcons.eyeSlash,
-                        size: 16.0,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
           Container(
-            margin: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 32),
+            margin: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 32),
             width: MediaQuery.of(context).size.width,
             child: MaterialButton(
               disabledColor: Theme.of(context).primaryColor.withAlpha(200),
@@ -289,23 +222,23 @@ class _RegisterState extends State<Register> {
               textColor: Colors.white,
               highlightColor: Colors.transparent,
               color: Theme.of(context).primaryColor,
-              shape: const RoundedRectangleBorder(
+              shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(4.0))),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 16),
+                padding: EdgeInsetsDirectional.fromSTEB(12, 16, 12, 16),
                 child: loginScreenViewModel.saving
                     ? Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "جاري إنشاء حسابك",
+                            "جاري تسجيل الدخول..",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleSmall!
                                 .copyWith(color: Colors.white60),
                           ),
-                          const Padding(
-                            padding: EdgeInsetsDirectional.only(start: 8),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(start: 8),
                             child: SizedBox(
                                 width: 15,
                                 height: 15,
@@ -317,7 +250,7 @@ class _RegisterState extends State<Register> {
                       )
                     : !loginScreenViewModel.isLoggedIn
                         ? Text(
-                            "إنشاء الحساب",
+                            "تسجيل الدخول",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleSmall!
@@ -327,7 +260,7 @@ class _RegisterState extends State<Register> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "تم إنشاء الحساب",
+                                "Success",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleSmall!
@@ -350,13 +283,13 @@ class _RegisterState extends State<Register> {
                         if (formKey.currentState!.validate())
                           {
                             formKey.currentState!.save(),
-                            register(context),
+                            login(context),
                           }
                       }
                   : null,
             ),
           ),
-          Container(
+          /*  Container(
             margin: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 32),
             width: MediaQuery.of(context).size.width,
             child: MaterialButton(
@@ -370,7 +303,7 @@ class _RegisterState extends State<Register> {
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 16),
                 child: Text(
-                  "لدي حساب بالفعل",
+                  "إنشاء حساب جديد",
                   style: Theme.of(context)
                       .textTheme
                       .titleSmall!
@@ -380,11 +313,35 @@ class _RegisterState extends State<Register> {
               onPressed: !loginScreenViewModel.saving
                   ? () => {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => const Login()))
+                            builder: (context) => const Register()))
+                      }
+                  : null,
+            ),
+          ), */
+          // forgot password button here
+          Container(
+            margin: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 32),
+            width: MediaQuery.of(context).size.width,
+            child: TextButton(
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(12, 16, 12, 16),
+                child: Text(
+                  "نسيت كلمة المرور؟",
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleSmall!
+                      .copyWith(color: Colors.black),
+                ),
+              ),
+              onPressed: !loginScreenViewModel.saving
+                  ? () => {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ForgotPassword()))
                       }
                   : null,
             ),
           ),
+
           !loginScreenViewModel.isLoggedIn
               ? Text(
                   loginScreenViewModel.getFirstMessage(),
@@ -405,22 +362,15 @@ class _RegisterState extends State<Register> {
     });
   }
 
-  void _togglePasswordConfirm() {
-    setState(() {
-      _obscureTextConfirmPassword = !_obscureTextConfirmPassword;
-    });
-  }
-
-  register(context) {
-    final code = OTP.generateTOTPCodeString(
-        'JBSWY3DPEHPK3PXP', DateTime.now().millisecondsSinceEpoch);
-    print(code);
-    loginScreenViewModel.register(
-        signupFullNameController.text,
-        signupPhoneNumberController.text,
-        signupEmailController.text,
-        signupPhoneNumberController.text,
-        loginPasswordController.text,
-        code);
+  login(context) {
+    loginScreenViewModel.login(
+        loginUserNameController.text, loginPasswordController.text);
+    /*  if (loginScreenViewModel.isLoggedIn) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => MainScreen(
+                mainViewModel: serviceLocator<MainViewModel>(),
+                profileViewModel: serviceLocator<MyProfileViewModel>(),
+              )));
+    } */
   }
 }
