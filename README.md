@@ -18,4 +18,5 @@ samples, guidance on mobile development, and a full API reference.
 
 ##  brief overview
 
-- 
+## map initialization
+- implemented my own API key for google maps usage
