@@ -43,7 +43,6 @@ dependencies:
   easy_localization: ^3.0.0
   font_awesome_flutter: ^9.2.0
   email_validator: ^2.0.1
-  place_picker: ^0.9.20-nullsafety
   provider: ^6.0.2
   persistent_bottom_nav_bar: ^4.0.2
   otp: ^3.1.0
