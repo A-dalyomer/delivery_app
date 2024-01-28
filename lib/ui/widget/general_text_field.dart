@@ -29,7 +29,7 @@ class GeneralTextField extends StatelessWidget {
         hintText: hintText,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: ColorsManager.grey, width: 2),
+          borderSide: const BorderSide(color: ColorsManager.grey, width: 2),
         ),
       ),
       keyboardType: inputType,

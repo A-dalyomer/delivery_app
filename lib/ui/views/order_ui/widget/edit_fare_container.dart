@@ -30,14 +30,14 @@ class EditFareContainer extends StatelessWidget {
             children: [
               Text(
                 "Offered ride fair: \$$offeredPrice",
-                style: TextStyle(
+                style: const TextStyle(
                   color: ColorsManager.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 "Current Fare",
                 style: TextStyle(
                   color: ColorsManager.black,

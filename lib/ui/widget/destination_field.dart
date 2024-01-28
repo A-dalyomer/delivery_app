@@ -46,8 +46,8 @@ class DestinationField extends StatelessWidget {
                 child: InkWell(
                   onTap: () => scaffoldKey2.currentState?.openDrawer(),
                   borderRadius: BorderRadius.circular(12),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(12.0),
                     child: Icon(Icons.menu, color: ColorsManager.black),
                   ),
                 ),
@@ -60,22 +60,22 @@ class DestinationField extends StatelessWidget {
             onTap: onTap,
             canRequestFocus: isEditable,
             contextMenuBuilder: (context, editableTextState) =>
-                SizedBox.shrink(),
+                const SizedBox.shrink(),
             onSubmitted: onSubmitted,
             decoration: InputDecoration(
               hintText: 'Enter Destination Address',
-              hintStyle: TextStyle(color: ColorsManager.greyText),
+              hintStyle: const TextStyle(color: ColorsManager.greyText),
               filled: true,
               fillColor: controller?.text.isEmpty == null
                   ? ColorsManager.grey
                   : ColorsManager.lightTeal,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: ColorsManager.green),
+                borderSide: const BorderSide(color: ColorsManager.green),
               ),
               contentPadding:
-                  EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              prefixIconConstraints: BoxConstraints(
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              prefixIconConstraints: const BoxConstraints(
                 maxHeight: 25,
                 maxWidth: 50,
               ),

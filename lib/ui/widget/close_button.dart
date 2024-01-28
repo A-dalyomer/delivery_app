@@ -27,7 +27,7 @@ class CloseWidgetButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(200),
                 border: Border.all(color: Colors.red),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.close,
                 color: ColorsManager.red,
               ),

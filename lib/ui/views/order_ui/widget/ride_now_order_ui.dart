@@ -16,15 +16,15 @@ class RideNowOrderUI extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           "Available Rides",
           style: TextStyle(
             color: ColorsManager.black,
             fontSize: 16,
           ),
         ),
-        RideTypeSelectionWidget(),
-        Text(
+        const RideTypeSelectionWidget(),
+        const Text(
           "Pickup Contact",
           style: TextStyle(
             color: ColorsManager.greyText,
@@ -32,9 +32,9 @@ class RideNowOrderUI extends StatelessWidget {
             fontSize: 16,
           ),
         ),
-        OrderReceiverSummaryWidget(),
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0),
+        const OrderReceiverSummaryWidget(),
+        const Padding(
+          padding: EdgeInsets.only(top: 8.0),
           child: OrderDetailWidget(
             title: "Paying via",
             iconData: Icons.money,
@@ -47,7 +47,7 @@ class RideNowOrderUI extends StatelessWidget {
               selector: (_, orderProvider) =>
                   orderProvider.orderDetails.goodsType,
               builder: (context, value, child) {
-                if (value.isEmpty) return SizedBox.shrink();
+                if (value.isEmpty) return const SizedBox.shrink();
                 return OrderDetailWidget(
                   title: "Goods Type",
                   iconData: Icons.local_shipping_rounded,

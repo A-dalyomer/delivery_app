@@ -24,7 +24,7 @@ class DestinationLocationOrderUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Selector<MapProvider, bool>(
-      selector: (BuildContext, mapProvider) => mapProvider.showingMap,
+      selector: (context, mapProvider) => mapProvider.showingMap,
       builder: (context, showingMap, child) {
         if (showingMap) {
           return Column(
@@ -89,8 +89,8 @@ class DestinationLocationOrderUI extends StatelessWidget {
                       ),
                     )
                     .toList(),
-                Padding(
-                  padding: const EdgeInsets.only(top: 30, bottom: 10),
+                const Padding(
+                  padding: EdgeInsets.only(top: 30, bottom: 10),
                   child: DestinationField(fieldType: FieldType.destination),
                 ),
                 LocateOnMapButton(onTap: () async {

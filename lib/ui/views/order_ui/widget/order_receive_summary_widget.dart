@@ -23,7 +23,7 @@ class OrderReceiverSummaryWidget extends StatelessWidget {
                 Expanded(
                   child: Text(
                     orderProvider.orderDetails.receiverInfo?.name ?? 'None',
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: ColorsManager.green,
                       fontWeight: FontWeight.bold,
                     ),
@@ -33,7 +33,7 @@ class OrderReceiverSummaryWidget extends StatelessWidget {
                 Text(
                   orderProvider.orderDetails.receiverInfo?.phoneNumber ??
                       'Not provided',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: ColorsManager.green,
                     fontWeight: FontWeight.bold,
                   ),
@@ -43,7 +43,7 @@ class OrderReceiverSummaryWidget extends StatelessWidget {
             Text(
               orderProvider.orderDetails.receiverInfo?.note ??
                   'No Additional notes',
-              style: TextStyle(
+              style: const TextStyle(
                 color: ColorsManager.green,
                 fontWeight: FontWeight.bold,
               ),

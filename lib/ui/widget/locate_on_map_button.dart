@@ -11,7 +11,7 @@ class LocateOnMapButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ColorFlag(color: ColorsManager.red, size: 30),

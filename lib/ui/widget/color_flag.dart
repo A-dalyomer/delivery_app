@@ -15,7 +15,7 @@ class ColorFlag extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
         ),
         child: Padding(
-          padding: EdgeInsets.all(4),
+          padding: const EdgeInsets.all(4),
           child: Center(
             child: Container(
               decoration: BoxDecoration(

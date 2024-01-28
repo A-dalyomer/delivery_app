@@ -31,11 +31,11 @@ class _WaitingOfferOrderUIState extends State<WaitingOfferOrderUI> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(
+        const Align(
           alignment: Alignment.centerRight,
           child: CancelOrderButton(),
         ),
-        Text(
+        const Text(
           "Looking",
           style: TextStyle(
             color: ColorsManager.black,

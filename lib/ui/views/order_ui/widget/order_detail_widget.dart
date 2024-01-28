@@ -34,7 +34,7 @@ class OrderDetailWidget extends StatelessWidget {
                 Row(
                   children: [
                     Icon(iconData, color: Colors.green),
-                    SizedBox(width: 6),
+                    const SizedBox(width: 6),
                   ],
                 ),
               Text(

@@ -15,11 +15,11 @@ class MapWidget extends StatelessWidget {
   Widget selectionIcon(MapSelectionMode selectionMode) {
     switch (selectionMode) {
       case MapSelectionMode.none:
-        return SizedBox.shrink();
+        return const SizedBox.shrink();
       case MapSelectionMode.pickup:
-        return SelectionPin(color: ColorsManager.blue);
+        return const SelectionPin(color: ColorsManager.blue);
       case MapSelectionMode.destination:
-        return SelectionPin(color: ColorsManager.red);
+        return const SelectionPin(color: ColorsManager.red);
     }
   }
 
@@ -51,7 +51,7 @@ class MapWidget extends StatelessWidget {
               selectionIcon(mapProvider.mapSelectionMode),
 
               /// to raise the pin according to the small line under it
-              SizedBox(height: 60)
+              const SizedBox(height: 60)
             ],
           ),
         )

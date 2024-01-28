@@ -29,8 +29,8 @@ class GetLocationButton extends StatelessWidget {
           child: InkWell(
             borderRadius: BorderRadius.circular(200),
             onTap: () => mapProvider.getUserLocation(),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
+            child: const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Icon(
                 Icons.my_location_outlined,
                 color: ColorsManager.green,

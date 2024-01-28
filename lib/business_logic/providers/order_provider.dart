@@ -1,4 +1,5 @@
 import 'package:bloomdeliveyapp/business_logic/utils/cancel_order.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:bloomdeliveyapp/business_logic/models/order/order_model.dart';
@@ -87,7 +88,7 @@ class OrderProvider extends ChangeNotifier {
   void setGoodsDetails(BuildContext context) async {
     String? selectedGoods = await Navigator.push(
       context,
-      animatedRoute(GoodsSelectionScreen()),
+      animatedRoute(const GoodsSelectionScreen()),
     );
     if (selectedGoods != null) {
       orderDetails.goodsType = selectedGoods;
@@ -126,9 +127,11 @@ class OrderProvider extends ChangeNotifier {
       builder: (context) {
         return SelectFairDialog(
           textEditingController: fairController,
-          recommendedFare: "${AppMetrics.currency}${rideRecommendedFare}",
+          recommendedFare: "${AppMetrics.currency}$rideRecommendedFare",
           onAccepted: () {
-            print(fairController.text);
+            if (kDebugMode) {
+              print('offered fare: ${fairController.text}');
+            }
             if (fairController.text.isNotEmpty) {
               setOfferedPrice(double.parse(fairController.text));
               changeActiveOrderStep(OrderSteps.waitingOffer);

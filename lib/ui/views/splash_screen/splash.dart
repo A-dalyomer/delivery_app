@@ -6,19 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:bloomdeliveyapp/ui/views/auth_screen/login_screen.dart';
 
 class Splash extends StatefulWidget {
+  const Splash({super.key});
+
   @override
-  _SplashState createState() => _SplashState();
+  State<Splash> createState() => _SplashState();
 }
 
 class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 1), () {
+    Timer(const Duration(seconds: 1), () {
       _onSplashEnd();
     });
 
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Image.asset("assets/img/logo.png", fit: BoxFit.contain),
@@ -31,7 +33,7 @@ class _SplashState extends State<Splash> {
       if (prefs.getString('token') != null &&
           prefs.getString('token')!.isNotEmpty) {
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => DeliveryMapScreen()));
+            MaterialPageRoute(builder: (context) => const DeliveryMapScreen()));
       } else {
         Navigator.pushReplacement(
           context,

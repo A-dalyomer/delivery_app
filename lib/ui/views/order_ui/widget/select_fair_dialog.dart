@@ -33,8 +33,8 @@ class SelectFairDialog extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -51,13 +51,13 @@ class SelectFairDialog extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
-                        OrderDetailWidget(
+                        const OrderDetailWidget(
                           title: "Moto Ride",
                           value: "Single Person Zip Rides",
                           fontSize: 18,
                         ),
-                        SizedBox(height: 16),
-                        OrderDetailWidget(
+                        const SizedBox(height: 16),
+                        const OrderDetailWidget(
                           title: "Supported Vehicles",
                           value: "Honda",
                           fontSize: 18,
@@ -65,7 +65,7 @@ class SelectFairDialog extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               "Recommended Fare",
                               style: TextStyle(
                                 color: ColorsManager.green,
@@ -75,7 +75,7 @@ class SelectFairDialog extends StatelessWidget {
                             ),
                             Text(
                               recommendedFare,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: ColorsManager.lightGreen,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
@@ -99,13 +99,13 @@ class SelectFairDialog extends StatelessWidget {
                                 ]),
                             child: TextField(
                               controller: textEditingController,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 prefixIconConstraints:
                                     BoxConstraints(minHeight: 20),
                                 prefixIcon: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Text(
-                                    "${AppMetrics.currency}",
+                                    AppMetrics.currency,
                                     style: TextStyle(
                                       color: ColorsManager.green,
                                       fontSize: 20,

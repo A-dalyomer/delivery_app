@@ -12,10 +12,10 @@ import 'package:provider/provider.dart';
 
 import '../order_ui/order_progressing_widget.dart';
 
-final scaffoldKey2 = new GlobalKey<ScaffoldState>();
+final scaffoldKey2 = GlobalKey<ScaffoldState>();
 
 class DeliveryMapScreen extends StatefulWidget {
-  DeliveryMapScreen({Key? key}) : super(key: key);
+  const DeliveryMapScreen({Key? key}) : super(key: key);
   @override
   DeliveryMapScreenState createState() => DeliveryMapScreenState();
 }
@@ -25,7 +25,7 @@ class DeliveryMapScreenState extends State<DeliveryMapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey2,
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => MapProvider()),
@@ -41,28 +41,28 @@ class DeliveryMapScreenState extends State<DeliveryMapScreen> {
                     children: [
                       Flexible(
                         child: AnimatedSize(
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           child: mapProvider.showingMap
                               ? Stack(
                                   children: [
                                     MapWidget(mapProvider: mapProvider),
-                                    Align(
+                                    const Align(
                                       alignment: AlignmentDirectional.bottomEnd,
                                       child: GetLocationButton(),
                                     ),
                                   ],
                                 )
-                              : SizedBox.shrink(),
+                              : const SizedBox.shrink(),
                         ),
                       ),
                       AnimatedSize(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: ColorsManager.lightTeal,
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
+                          child: const Padding(
+                            padding: EdgeInsets.only(
                               top: 8,
                               bottom: 26,
                               left: 26,
@@ -98,7 +98,7 @@ class DeliveryMapScreenState extends State<DeliveryMapScreen> {
                       ),
                     )
                   else if (mapProvider.showingMap)
-                    OrderBackButton(),
+                    const OrderBackButton(),
                 ],
               );
             },

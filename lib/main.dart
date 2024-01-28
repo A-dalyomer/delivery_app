@@ -7,7 +7,6 @@ import 'ui/views/splash_screen/splash.dart';
 void main() {
   HttpOverrides.global = MyHttpOverrides();
   runApp(EasyLocalization(
-    child: MyApp(),
     supportedLocales: const [
       Locale('en'),
       Locale('ar'),
@@ -16,6 +15,7 @@ void main() {
     fallbackLocale: const Locale('en'),
     startLocale: const Locale('en'),
     useOnlyLangCode: true,
+    child: const MyApp(),
   ));
 }
 
@@ -33,31 +33,30 @@ const tajribaAccent = Color.fromARGB(255, 210, 164, 161);
 const tajribaSeconday = Color.fromARGB(255, 4, 226, 100);
 const tajribaPrimaryLighter = Color(0xFF94d3ac);
 
-late TextStyle TajawalbodyText1;
 Map<int, Color> bluecareCustomColor = {
-  50: Color.fromRGBO(136, 14, 79, .1),
-  100: Color.fromRGBO(136, 14, 79, .2),
-  200: Color.fromRGBO(136, 14, 79, .3),
-  300: Color.fromRGBO(136, 14, 79, .8),
-  400: Color.fromRGBO(136, 14, 79, .5),
-  500: Color.fromRGBO(136, 14, 79, .6),
-  600: Color.fromRGBO(136, 14, 79, .7),
-  700: Color.fromRGBO(136, 14, 79, .8),
-  800: Color.fromRGBO(136, 14, 79, .9),
-  900: Color.fromRGBO(109, 92, 126, 1.0),
+  50: const Color.fromRGBO(136, 14, 79, .1),
+  100: const Color.fromRGBO(136, 14, 79, .2),
+  200: const Color.fromRGBO(136, 14, 79, .3),
+  300: const Color.fromRGBO(136, 14, 79, .8),
+  400: const Color.fromRGBO(136, 14, 79, .5),
+  500: const Color.fromRGBO(136, 14, 79, .6),
+  600: const Color.fromRGBO(136, 14, 79, .7),
+  700: const Color.fromRGBO(136, 14, 79, .8),
+  800: const Color.fromRGBO(136, 14, 79, .9),
+  900: const Color.fromRGBO(109, 92, 126, 1.0),
 };
 MaterialColor bluecareColor = MaterialColor(0xFF880E4F, bluecareCustomColor);
 MaterialColor bcColor = MaterialColor(0xFFf75a0d, bluecareCustomColor);
 MaterialColor bcSColor = MaterialColor(0xFF849547, bluecareCustomColor);
 MaterialColor bcSTColor = MaterialColor(0xFFd3dbff, bluecareCustomColor);
 final routeObserver = RouteObserver<PageRoute>();
-const duration = const Duration(milliseconds: 300);
+const duration = Duration(milliseconds: 300);
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -78,7 +77,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: ColorsManager.lightTeal,
-        snackBarTheme: SnackBarThemeData(),
+        snackBarTheme: const SnackBarThemeData(),
         /* bottomAppBarTheme: BottomAppBarTheme(
           color: tajribaBackgroundLighter,
           elevation: 2,
@@ -86,11 +85,11 @@ class _MyAppState extends State<MyApp> {
         bottomAppBarColor: tajribaBackgroundLighter, */
         dialogTheme: DialogTheme(
           backgroundColor: tajribaBackground,
-          contentTextStyle: TextStyle(
+          contentTextStyle: const TextStyle(
               fontFamily: 'Tajawal',
               color: Colors.black87,
               fontWeight: FontWeight.bold),
-          titleTextStyle: TextStyle(
+          titleTextStyle: const TextStyle(
             fontFamily: 'Tajawal',
             color: Colors.black87,
           ),
@@ -100,17 +99,17 @@ class _MyAppState extends State<MyApp> {
           elevation: 0,
           color: Colors.white,
           centerTitle: true,
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.black,
           ),
           toolbarTextStyle: TextTheme(
-            titleSmall: TextStyle(
+            titleSmall: const TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
               color: Colors.black,
               fontFamily: 'Tajawal',
             ),
-            headlineSmall: TextStyle().copyWith(
+            headlineSmall: const TextStyle().copyWith(
               color: Colors.black,
               fontFamily: 'Tajawal',
               fontWeight: FontWeight.bold,
@@ -124,13 +123,13 @@ class _MyAppState extends State<MyApp> {
                 ),
           ).bodyMedium,
           titleTextStyle: TextTheme(
-            titleSmall: TextStyle(
+            titleSmall: const TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
               color: Colors.black,
               fontFamily: 'Tajawal',
             ),
-            headlineSmall: TextStyle().copyWith(
+            headlineSmall: const TextStyle().copyWith(
               color: Colors.black,
               fontFamily: 'Tajawal',
               fontWeight: FontWeight.bold,
@@ -161,11 +160,11 @@ class _MyAppState extends State<MyApp> {
           minWidth: 20,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
-        buttonBarTheme: ButtonBarThemeData(
+        buttonBarTheme: const ButtonBarThemeData(
             buttonPadding: EdgeInsets.only(left: 8, right: 8),
             buttonTextTheme: ButtonTextTheme.normal),
         textTheme: TextTheme(
-          headlineMedium: TextStyle(
+          headlineMedium: const TextStyle(
             fontWeight: FontWeight.bold,
             color: tajribaPrimary,
             fontFamily: 'Tajawal',
@@ -176,7 +175,7 @@ class _MyAppState extends State<MyApp> {
             color: primaryColor,
             fontFamily: 'Tajawal',
           ),
-          titleLarge: TextStyle(
+          titleLarge: const TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
             fontFamily: 'Tajawal',
@@ -187,19 +186,19 @@ class _MyAppState extends State<MyApp> {
             color: primaryColor,
             fontFamily: 'Tajawal',
           ),
-          titleSmall: TextStyle(
+          titleSmall: const TextStyle(
               //height: 2,
               fontWeight: FontWeight.bold,
               color: Colors.black,
               fontFamily: 'Tajawal'),
-          bodyLarge: TextStyle(
+          bodyLarge: const TextStyle(
             fontWeight: FontWeight.normal,
             height: 1.5,
             fontSize: 14,
             fontFamily: 'Tajawal',
             color: Colors.black,
           ),
-          bodyMedium: TextStyle(
+          bodyMedium: const TextStyle(
             fontSize: 14,
             //height: 1,
             fontFamily: 'Tajawal',
@@ -212,28 +211,28 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
-          contentPadding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+          contentPadding: const EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.transparent),
+              borderSide: const BorderSide(color: Colors.transparent),
               borderRadius: BorderRadius.circular(8)),
           focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: tajribaPrimary),
+              borderSide: const BorderSide(color: tajribaPrimary),
               borderRadius: BorderRadius.circular(8)),
           errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.redAccent),
+              borderSide: const BorderSide(color: Colors.redAccent),
               borderRadius: BorderRadius.circular(8)),
           focusedErrorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.redAccent),
+              borderSide: const BorderSide(color: Colors.redAccent),
               borderRadius: BorderRadius.circular(8)),
           filled: true,
           fillColor: tajribaBackgroundLighter,
 
-          labelStyle: TextStyle(
+          labelStyle: const TextStyle(
             fontSize: 12.0,
             fontFamily: 'Tajawal',
             color: Colors.grey,
           ),
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
             fontSize: 12.0,
             fontFamily: 'Tajawal',
             color: Colors.grey,
@@ -245,7 +244,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSwatch(primarySwatch: bluecareColor)
             .copyWith(background: tajribaBackground),
       ),
-      home: Splash(),
+      home: const Splash(),
       navigatorObservers: [routeObserver],
     );
   }

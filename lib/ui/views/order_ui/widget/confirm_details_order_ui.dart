@@ -20,7 +20,7 @@ class ConfirmDetailsOrderUI extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Confirm Details',
                   style: TextStyle(
                     color: ColorsManager.black,
@@ -38,7 +38,7 @@ class ConfirmDetailsOrderUI extends StatelessWidget {
                     );
                     orderProvider.addMoreDestinations();
                   },
-                  child: Text(
+                  child: const Text(
                     "Add Stop +",
                     style: TextStyle(
                       color: ColorsManager.green,
@@ -54,7 +54,7 @@ class ConfirmDetailsOrderUI extends StatelessWidget {
                     "${orderProvider.orderDetails.pickupLocation?.latitude},${orderProvider.orderDetails.pickupLocation?.longitude}",
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ...orderProvider.orderDetails.destinations
                 .map(
                   (e) => Padding(
@@ -82,7 +82,7 @@ class ConfirmDetailsOrderUI extends StatelessWidget {
                   ),
                 )
                 .toList(),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             GeneralButton(
               title: "Confirm",
               onTap: () => orderProvider.confirmOrder(),

@@ -10,7 +10,7 @@ class LoginScreenViewModel extends ChangeNotifier {
   final LoginServiceStrapi _loginService = serviceLocator<LoginServiceStrapi>();
 
   List<ResponseErrorMeessagesModel> message = [];
-  ResponseModel response = new ResponseModel();
+  ResponseModel response = ResponseModel();
   String errorMessage = '';
 
   void login(String identifier, String password) async {

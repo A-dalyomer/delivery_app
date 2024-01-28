@@ -21,7 +21,7 @@ class MapProvider extends ChangeNotifier {
   bool showUserLocation = false;
   Set<Marker> markers = {};
   Set<Polyline> polyLines = {};
-  LatLng selectedLocation = LatLng(0, 0);
+  LatLng selectedLocation = const LatLng(0, 0);
   double approximateDistance = 0;
 
   void onMapCreated({
@@ -88,7 +88,7 @@ class MapProvider extends ChangeNotifier {
           child: Row(
             children: [
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: ColorsManager.black,
                   borderRadius: BorderRadius.horizontal(
                     left: Radius.circular(12),
@@ -108,7 +108,7 @@ class MapProvider extends ChangeNotifier {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   mode.name,
-                  style: TextStyle(color: ColorsManager.black),
+                  style: const TextStyle(color: ColorsManager.black),
                 ),
               ),
             ],
@@ -122,7 +122,7 @@ class MapProvider extends ChangeNotifier {
   }
 
   void addPolyLine(List<LatLng> polylineCoordinates) {
-    PolylineId id = PolylineId("polyline");
+    PolylineId id = const PolylineId("polyline");
     Polyline polyline = Polyline(
       polylineId: id,
       color: ColorsManager.red,
@@ -165,13 +165,15 @@ class MapProvider extends ChangeNotifier {
       markerId: 'pick_up',
       mode: MapSelectionMode.pickup,
     );
-    destinations.forEach((element) async {
-      await addMarker(
-        markerId: '${element.latitude},${element.longitude}',
-        position: element,
-        mode: MapSelectionMode.destination,
-      );
-    });
+    destinations.forEach(
+      (element) async {
+        await addMarker(
+          markerId: '${element.latitude},${element.longitude}',
+          position: element,
+          mode: MapSelectionMode.destination,
+        );
+      },
+    );
     notifyListeners();
 
     if (kDebugMode) {

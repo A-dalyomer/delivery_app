@@ -18,17 +18,17 @@ class OrderProgressingWidget extends StatelessWidget {
 
     switch (orderProvider.activeStep) {
       case OrderSteps.pickingPickupLocation:
-        return PickupLocationOrderUI();
+        return const PickupLocationOrderUI();
       case OrderSteps.pickingDestination:
-        return DestinationLocationOrderUI();
+        return const DestinationLocationOrderUI();
       case OrderSteps.receiverInfo:
-        return ReceiverInfoOrderUI();
+        return const ReceiverInfoOrderUI();
       case OrderSteps.confirmDetails:
-        return ConfirmDetailsOrderUI();
+        return const ConfirmDetailsOrderUI();
       case OrderSteps.rideNow:
-        return RideNowOrderUI();
+        return const RideNowOrderUI();
       case OrderSteps.waitingOffer:
-        return WaitingOfferOrderUI();
+        return const WaitingOfferOrderUI();
     }
   }
 }

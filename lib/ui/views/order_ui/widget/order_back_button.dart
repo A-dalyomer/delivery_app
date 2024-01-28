@@ -35,8 +35,8 @@ class OrderBackButton extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(200),
                 onTap: () => orderProvider.backInOrderSteps(context),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: Icon(
                     Icons.arrow_back_rounded,
                     color: ColorsManager.green,

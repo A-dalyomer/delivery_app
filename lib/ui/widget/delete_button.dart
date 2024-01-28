@@ -13,7 +13,7 @@ class _DeleteButtonState extends State<DeleteButton> {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: widget.onTap,
-      icon: Icon(
+      icon: const Icon(
         Icons.delete_forever,
         color: Colors.red,
       ),

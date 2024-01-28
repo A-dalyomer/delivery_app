@@ -9,7 +9,7 @@ class CancelOrderButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => cancelActiveOrder(context),
-      child: Text(
+      child: const Text(
         "Cancel",
         style: TextStyle(
           color: ColorsManager.red,

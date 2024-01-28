@@ -47,7 +47,7 @@ class _RideTypeSelectionWidgetState extends State<RideTypeSelectionWidget> {
                     padding: const EdgeInsets.all(8.0),
                     child: AnimatedContainer(
                       height: 100,
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
@@ -89,13 +89,13 @@ class _RideTypeSelectionWidgetState extends State<RideTypeSelectionWidget> {
                                     children: [
                                       Text(
                                         e.name,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: ColorsManager.black,
                                           fontSize: 16,
                                         ),
                                       ),
-                                      SizedBox(height: 5),
+                                      const SizedBox(height: 5),
                                       Selector<OrderProvider, double>(
                                           selector: (_, orderProvider) =>
                                               orderProvider
@@ -105,7 +105,7 @@ class _RideTypeSelectionWidgetState extends State<RideTypeSelectionWidget> {
                                             return Text(
                                               '${AppMetrics.currency}${(recommendedFare * (e == RideType.truck ? AppMetrics.costPerMeterTruck : AppMetrics.costPerMeterMotor)).toStringAsFixed(2)}',
                                               overflow: TextOverflow.ellipsis,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 color: ColorsManager.greyText,
                                                 fontSize: 14,
                                               ),

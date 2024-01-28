@@ -54,8 +54,8 @@ class _ReceiverInfoOrderUIState extends State<ReceiverInfoOrderUI> {
       key: formKey,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 5.0),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 5.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
