@@ -20,7 +20,6 @@ class UserService {
         .then((token) => token.isNotEmpty);
   }
 
-
   Future saveCurrentUser(String user) {
     return _saveToPreferences(sharedPrefCurrentUserKey, user);
   }

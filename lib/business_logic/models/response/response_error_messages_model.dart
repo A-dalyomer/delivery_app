@@ -10,6 +10,7 @@ class ResponseErrorMeessagesModel {
     this.id,
     this.message,
   });
-   factory ResponseErrorMeessagesModel.fromJson(Map<String, dynamic> json) => _$ResponseErrorMeessagesModelFromJson(json);
+  factory ResponseErrorMeessagesModel.fromJson(Map<String, dynamic> json) =>
+      _$ResponseErrorMeessagesModelFromJson(json);
   Map<String, dynamic> toJson() => _$ResponseErrorMeessagesModelToJson(this);
 }
