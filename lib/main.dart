@@ -2,23 +2,20 @@ import 'dart:io';
 import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:bloomdeliveyapp/services/service_locator.dart';
 import 'ui/views/splash_screen/splash.dart';
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();
-  setupServiceLocator();
   runApp(EasyLocalization(
     child: MyApp(),
     supportedLocales: const [
       Locale('en'),
       Locale('ar'),
     ],
-    path: 'assets/translations', // <-- change patch to your
+    path: 'assets/translations',
     fallbackLocale: const Locale('en'),
     startLocale: const Locale('en'),
     useOnlyLangCode: true,
-    //assetLoader: CodegenLoader()
   ));
 }
 
@@ -29,13 +26,6 @@ const balbirGradient = LinearGradient(
     end: Alignment.topRight,
     stops: [0.0, 1.0]);
 
-/* const tajribaBackgroundLighter = Color(0xFFeffcef);
-const tajribaBackground = Color(0xFFccedd2);
-const tajribaPrimary = Color(0xFF21bf73);
-const tajribaSecondayLighter = Color(0xFFfd5e53);
-const tajribaPrimaryLighter = Color(0xFF94d3ac);
- */
-/* const tajribaBackgroundLighter = Color(0xFFefecec); */
 const tajribaBackgroundLighter = Color(0xFFffffff);
 var tajribaBackground = Colors.grey[200];
 const tajribaPrimary = Color.fromARGB(255, 81, 149, 32);
@@ -72,19 +62,15 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Color primaryColor = tajribaPrimary;
-  //Color accentColor = bluecareCustomColor[900];
   Color accentColor = tajribaAccent;
 
   @override
   void initState() {
     super.initState();
-    //myLocale = Localizations.localeOf(context);
   }
 
   @override
   Widget build(BuildContext context) {
-    //debugPaintSizeEnabled = true;
-
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
@@ -110,7 +96,6 @@ class _MyAppState extends State<MyApp> {
           ),
           //contentTextStyle: Theme.of(context).textTheme.bodyText2,
         ),
-
         appBarTheme: AppBarTheme(
           elevation: 0,
           color: Colors.white,
@@ -166,7 +151,6 @@ class _MyAppState extends State<MyApp> {
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-
         primaryColor: primaryColor,
         brightness: Brightness.light,
         hintColor: accentColor,
@@ -180,7 +164,6 @@ class _MyAppState extends State<MyApp> {
         buttonBarTheme: ButtonBarThemeData(
             buttonPadding: EdgeInsets.only(left: 8, right: 8),
             buttonTextTheme: ButtonTextTheme.normal),
-
         textTheme: TextTheme(
           headlineMedium: TextStyle(
             fontWeight: FontWeight.bold,
@@ -228,15 +211,8 @@ class _MyAppState extends State<MyApp> {
             color: primaryColor,
           ),
         ),
-        //iconTheme: IconThemeData(color: Colors.grey, size: 100, opacity: 1,),
-
         inputDecorationTheme: InputDecorationTheme(
-          /* enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey, width: 1.0),
-          ), */
-
           contentPadding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
-
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.transparent),
               borderRadius: BorderRadius.circular(8)),

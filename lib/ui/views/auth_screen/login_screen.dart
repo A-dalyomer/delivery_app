@@ -38,12 +38,7 @@ class _LoginState extends State<Login> {
 
   @override
   void initState() {
-    _localStorageService.isLoggenIn().then((isLoggenIn) {
-      /*    if (isLoggenIn) {
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => MainNavigationScreen()));
-      } */
-    });
+    _localStorageService.isLoggenIn().then((isLoggenIn) {});
 
     super.initState();
   }
@@ -60,12 +55,9 @@ class _LoginState extends State<Login> {
           child: Consumer<LoginScreenViewModel>(
               builder: (context, loginScreenViewModel, child) {
             if (loginScreenViewModel.isLoggedIn) {
-              _localStorageService.getMyProfile().then((profile) {
-                Future.microtask(
-                  () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => DeliveryMapScreen())),
-                );
-              });
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => DeliveryMapScreen()),
+              );
             }
             return Scaffold(
               body: Container(
@@ -91,18 +83,6 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-                    /*  Padding(
-                      padding: const EdgeInsetsDirectional.only(
-                          bottom: 48, start: 20),
-                      child: Container(
-                        height: 97,
-                        child: Image.asset(
-                          "assets/img/sila_logo_word.png",
-                          fit: BoxFit.scaleDown,
-                          //color: tajribaPrimary,
-                        ),
-                      ),
-                    ), */
                     _buildSignIn(context),
                   ],
                 ),
@@ -119,24 +99,6 @@ class _LoginState extends State<Login> {
       key: formKey,
       child: Column(
         children: <Widget>[
-          /* Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.only(
-                  bottom: 48,
-                ),
-                child: Text(
-                  "Login",
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline4
-                      .copyWith(color: Colors.white),
-                ),
-              ),
-            ],
-          ), */
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
             child: TextFormField(
@@ -283,36 +245,6 @@ class _LoginState extends State<Login> {
                   : null,
             ),
           ),
-          /*  Container(
-            margin: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 32),
-            width: MediaQuery.of(context).size.width,
-            child: MaterialButton(
-              disabledColor: Theme.of(context).primaryColor.withAlpha(200),
-              disabledTextColor: Colors.black12,
-              textColor: Colors.white,
-              highlightColor: Colors.transparent,
-              color: tajribaSeconday,
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(4.0))),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 16),
-                child: Text(
-                  "إنشاء حساب جديد",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall!
-                      .copyWith(color: Colors.white),
-                ),
-              ),
-              onPressed: !loginScreenViewModel.saving
-                  ? () => {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => const Register()))
-                      }
-                  : null,
-            ),
-          ), */
-          // forgot password button here
           Container(
             margin: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 32),
             width: MediaQuery.of(context).size.width,
@@ -335,7 +267,6 @@ class _LoginState extends State<Login> {
                   : null,
             ),
           ),
-
           !loginScreenViewModel.isLoggedIn
               ? Text(
                   loginScreenViewModel.getFirstMessage(),
@@ -359,12 +290,5 @@ class _LoginState extends State<Login> {
   login(context) {
     loginScreenViewModel.login(
         loginUserNameController.text, loginPasswordController.text);
-    /*  if (loginScreenViewModel.isLoggedIn) {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => MainScreen(
-                mainViewModel: serviceLocator<MainViewModel>(),
-                profileViewModel: serviceLocator<MyProfileViewModel>(),
-              )));
-    } */
   }
 }

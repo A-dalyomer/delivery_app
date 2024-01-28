@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:bloomdeliveyapp/services/service_locator.dart';
-import 'package:bloomdeliveyapp/services/storage/local_storage_service.dart';
 import 'package:bloomdeliveyapp/ui/views/map_screen/map_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
@@ -13,12 +11,9 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-  final LocalStorageService _localStorageService =
-      serviceLocator<LocalStorageService>();
-
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 1), () {
       _onSplashEnd();
     });
 
@@ -35,15 +30,13 @@ class _SplashState extends State<Splash> {
     await SharedPreferences.getInstance().then((prefs) {
       if (prefs.getString('token') != null &&
           prefs.getString('token')!.isNotEmpty) {
-        _localStorageService.getMyProfile().then((profile) {
-          Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => DeliveryMapScreen()));
-        });
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => DeliveryMapScreen()));
       } else {
         Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (BuildContext context) => const Login()));
+          context,
+          MaterialPageRoute(builder: (BuildContext context) => const Login()),
+        );
       }
     });
   }

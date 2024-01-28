@@ -1,6 +1,4 @@
-import 'package:bloomdeliveyapp/services/service_locator.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -11,13 +9,7 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
-  var _forgotPasswordFormKey = GlobalKey<FormState>();
-
-  TextEditingController _emailController = TextEditingController();
-
   bool _hasCallSupport = false;
-  Future<void>? _launched;
-
   var _phone = '3466';
 
   @override
@@ -67,7 +59,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 _hasCallSupport
                     ? TextButton(
                         onPressed: () => setState(() {
-                          _launched = _makePhoneCall(_phone);
+                          _makePhoneCall(_phone);
                         }),
                         child: Text(
                           "اتصل بخدمة العملاء",

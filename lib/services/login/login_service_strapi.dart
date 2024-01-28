@@ -1,27 +1,13 @@
 import 'dart:convert';
-import 'package:bloomdeliveyapp/business_logic/models/profile/profile_model.dart';
-
 import 'package:bloomdeliveyapp/services/storage/local_storage_service.dart';
-import 'package:http/src/response.dart';
 
-import 'package:bloomdeliveyapp/business_logic/models/user/user_model.dart';
 import 'package:bloomdeliveyapp/services/service_locator.dart';
-import 'package:bloomdeliveyapp/services/web_api/strapi_local_api.dart';
 
 class LoginServiceStrapi {
-  StrapiLocalApi _strapiLocalApi = serviceLocator<StrapiLocalApi>();
   final LocalStorageService _storageService =
       serviceLocator<LocalStorageService>();
 
   late String _token;
-  late User _user;
-
-  late Profile profile;
-
-  Future<User> getCurrentUser() async {
-    _user = await _storageService.getCurrentUser();
-    return _user;
-  }
 
   Future login(String identifier, String password) async {
     var res = {
@@ -46,45 +32,11 @@ class LoginServiceStrapi {
     var resencoded = jsonEncode(res);
     var parsed = jsonDecode(resencoded);
     _token = parsed['jwt'];
-    _user = User.fromJson(parsed['user']);
     await _saveToken(_token);
-    await _saveCurrentUser(jsonEncode(parsed['user']));
-    await _saveMyProfile(jsonEncode(parsed['user']));
     return parsed;
-  }
-
-  Future<Response> register(String fullname, String username, String email,
-      String phonenumber, String password, String code) async {
-    Response response;
-    return await _strapiLocalApi
-        .register(fullname, username, email, phonenumber, password, code)
-        .then((value) async {
-      response = value;
-
-      if (value.statusCode == 200) {
-        var parsed = jsonDecode(response.body);
-        _token = parsed['jwt'];
-        _user = User.fromJson(parsed['user']);
-        profile = Profile.fromJson(parsed['user']);
-        await _saveToken(_token);
-        await _saveCurrentUser(jsonEncode(parsed['user']));
-        await _saveMyProfile(jsonEncode(parsed['user']));
-        return response;
-      } else {
-        return response;
-      }
-    });
   }
 
   _saveToken(String token) async {
     await _storageService.saveToken(token);
-  }
-
-  _saveCurrentUser(String user) async {
-    await _storageService.saveCurrentUser(user);
-  }
-
-  _saveMyProfile(String profile) async {
-    await _storageService.saveMyProfile(profile);
   }
 }

@@ -3,7 +3,7 @@ import 'package:bloomdeliveyapp/business_logic/models/response/response_error_me
 
 part 'response_error_message_model.g.dart';
 
-@JsonSerializable(nullable: true)
+@JsonSerializable()
 class ResponseErrorMeessageModel {
   List<ResponseErrorMeessagesModel>? messages;
   ResponseErrorMeessageModel({

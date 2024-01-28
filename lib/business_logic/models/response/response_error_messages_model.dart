@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'response_error_messages_model.g.dart';
 
-@JsonSerializable(nullable: true)
+@JsonSerializable()
 class ResponseErrorMeessagesModel {
   String? id;
   String? message;

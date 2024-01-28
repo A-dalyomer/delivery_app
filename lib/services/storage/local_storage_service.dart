@@ -1,8 +1,4 @@
-import 'dart:convert';
-
-import 'package:bloomdeliveyapp/business_logic/models/profile/profile_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:bloomdeliveyapp/business_logic/models/user/user_model.dart';
 
 class LocalStorageService {
   static const sharedPrefTokenKey = 'token';
@@ -16,15 +12,6 @@ class LocalStorageService {
 
   Future<String> getToken() {
     return _getStringFromPreferences(sharedPrefTokenKey);
-  }
-
-  Future<User> getCurrentUser() async {
-    return User.fromJson(
-        jsonDecode(await _getStringFromPreferences(sharedPrefCurrentUserKey)));
-  }
-
-  Future saveCurrentUser(String user) {
-    return _saveToPreferences(sharedPrefCurrentUserKey, user);
   }
 
   Future<bool> isLoggenIn() async {
@@ -41,29 +28,9 @@ class LocalStorageService {
     return Future<String>.value(prefs.getString(key) ?? '');
   }
 
-  Future<void> _resetCacheTimeToNow() async {
-    int timestamp = DateTime.now().millisecondsSinceEpoch;
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setInt(sharedPrefLastCacheTimeKey, timestamp);
-  }
-
-  Future<Profile?> getMyProfile() async {
-    var json = await _getStringFromPreferences(sharedPrefMyProfileKey);
-    return json.isNotEmpty ? Profile.fromJson(jsonDecode(json)) : null;
-  }
-
-  Future saveMyProfile(String profile) {
-    return _saveToPreferences(sharedPrefMyProfileKey, profile);
-  }
-
   void removeCurrentUser() async {
     final prefs = await SharedPreferences.getInstance();
     prefs.remove(sharedPrefCurrentUserKey);
-  }
-
-  void removeMyProfile() async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.remove(sharedPrefMyProfileKey);
   }
 
   void removeToken() async {
