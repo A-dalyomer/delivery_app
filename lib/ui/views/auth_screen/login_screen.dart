@@ -1,12 +1,11 @@
-import 'package:bloomdeliveyapp/ui/views/auth_screen/forgot_password.dart';
-import 'package:bloomdeliveyapp/ui/views/map_screen/map_screen.dart';
-
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bloomdeliveyapp/business_logic/view_models/login/login_screen_viewmodel.dart';
 import 'package:bloomdeliveyapp/services/service_locator.dart';
-import 'package:provider/provider.dart';
 import 'package:bloomdeliveyapp/services/storage/local_storage_service.dart';
+import 'package:bloomdeliveyapp/ui/views/auth_screen/forgot_password.dart';
+import 'package:bloomdeliveyapp/ui/views/map_screen/map_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);

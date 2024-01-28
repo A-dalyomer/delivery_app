@@ -1,8 +1,8 @@
-import 'package:bloomdeliveyapp/services/login/login_service_strapi.dart';
-import 'package:flutter/foundation.dart';
 import 'package:bloomdeliveyapp/business_logic/models/response/response_error_messages_model.dart';
 import 'package:bloomdeliveyapp/business_logic/models/response/response_model.dart';
+import 'package:bloomdeliveyapp/services/login/login_service_strapi.dart';
 import 'package:bloomdeliveyapp/services/service_locator.dart';
+import 'package:flutter/foundation.dart';
 
 class LoginScreenViewModel extends ChangeNotifier {
   bool isLoggedIn = false;

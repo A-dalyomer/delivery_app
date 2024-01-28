@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:bloomdeliveyapp/ui/views/map_screen/map_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter/material.dart';
 import 'package:bloomdeliveyapp/ui/views/auth_screen/login_screen.dart';
+import 'package:bloomdeliveyapp/ui/views/map_screen/map_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

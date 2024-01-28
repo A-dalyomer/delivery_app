@@ -1,5 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:bloomdeliveyapp/business_logic/models/response/response_error_message_model.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'response_model.g.dart';
 

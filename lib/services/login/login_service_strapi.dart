@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:bloomdeliveyapp/services/storage/local_storage_service.dart';
 
 import 'package:bloomdeliveyapp/services/service_locator.dart';
+import 'package:bloomdeliveyapp/services/storage/local_storage_service.dart';
 
 class LoginServiceStrapi {
   final LocalStorageService _storageService =

@@ -1,7 +1,9 @@
 import 'dart:io';
+
 import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import 'ui/views/splash_screen/splash.dart';
 
 void main() {
