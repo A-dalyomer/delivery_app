@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:bloomdeliveyapp/services/service_locator.dart';
@@ -90,7 +91,7 @@ class _MyAppState extends State<MyApp> {
       locale: context.locale,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: tajribaBackgroundLighter,
+        scaffoldBackgroundColor: ColorsManager.lightTeal,
         snackBarTheme: SnackBarThemeData(),
         /* bottomAppBarTheme: BottomAppBarTheme(
           color: tajribaBackgroundLighter,
