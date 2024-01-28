@@ -6,7 +6,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:widget_to_marker/widget_to_marker.dart';
+
+import '../utils/generate_marker.dart';
 
 class MapProvider extends ChangeNotifier {
   MapProvider() {
@@ -76,47 +77,14 @@ class MapProvider extends ChangeNotifier {
     required String markerId,
     required MapSelectionMode mode,
   }) async {
-    await markers.add(
-      Marker(
-        markerId: MarkerId(markerId),
+    markers.add(
+      await generateMarker(
+        markerId: markerId,
         position: position,
-        icon: await Container(
-          decoration: BoxDecoration(
-            color: ColorsManager.lightTeal,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                  color: ColorsManager.black,
-                  borderRadius: BorderRadius.horizontal(
-                    left: Radius.circular(12),
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(14.0),
-                  child: Icon(
-                    Icons.star,
-                    color: mode == MapSelectionMode.pickup
-                        ? ColorsManager.green
-                        : ColorsManager.red,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  mode.name,
-                  style: const TextStyle(color: ColorsManager.black),
-                ),
-              ),
-            ],
-          ),
-        ).toBitmapDescriptor(
-          logicalSize: const Size(200, 200),
-          imageSize: const Size(400, 400),
-        ),
+        title: mode.name,
+        color: mode == MapSelectionMode.pickup
+            ? ColorsManager.green
+            : ColorsManager.red,
       ),
     );
   }
@@ -165,15 +133,14 @@ class MapProvider extends ChangeNotifier {
       markerId: 'pick_up',
       mode: MapSelectionMode.pickup,
     );
-    destinations.forEach(
-      (element) async {
-        await addMarker(
-          markerId: '${element.latitude},${element.longitude}',
-          position: element,
-          mode: MapSelectionMode.destination,
-        );
-      },
-    );
+
+    for (var element in destinations) {
+      await addMarker(
+        markerId: '${element.latitude},${element.longitude}',
+        position: element,
+        mode: MapSelectionMode.destination,
+      );
+    }
     notifyListeners();
 
     if (kDebugMode) {
