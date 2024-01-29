@@ -152,6 +152,7 @@ class OrderProvider extends ChangeNotifier {
         return SelectFairDialog(
           textEditingController: fairController,
           recommendedFare: "${AppMetrics.currency}$rideRecommendedFare",
+          rideType: rideType,
           onAccepted: () {
             if (kDebugMode) {
               print('offered fare: ${fairController.text}');

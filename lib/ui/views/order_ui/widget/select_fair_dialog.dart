@@ -1,4 +1,5 @@
 import 'package:bloomdeliveyapp/business_logic/constants/const_metrics.dart';
+import 'package:bloomdeliveyapp/business_logic/utils/enums.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../business_logic/constants/const_colors.dart';
@@ -12,10 +13,12 @@ class SelectFairDialog extends StatelessWidget {
     required this.textEditingController,
     required this.onAccepted,
     required this.recommendedFare,
+    required this.rideType,
   });
   final TextEditingController textEditingController;
   final VoidCallback onAccepted;
   final String recommendedFare;
+  final RideType rideType;
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +54,11 @@ class SelectFairDialog extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
-                        const OrderDetailWidget(
-                          title: "Moto Ride",
-                          value: "Single Person Zip Rides",
+                        OrderDetailWidget(
+                          title: rideType.name,
+                          value: rideType == RideType.motor
+                              ? "Single Person Zip Rides"
+                              : "Truck for lifting multiple packages",
                           fontSize: 18,
                         ),
                         const SizedBox(height: 16),
