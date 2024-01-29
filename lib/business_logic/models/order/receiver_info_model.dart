@@ -1,3 +1,4 @@
+/// This model is used as a DTO to store the receiver info in the [ReceiverInfo]
 class ReceiverInfo {
   ReceiverInfo({
     required this.name,

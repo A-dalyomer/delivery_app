@@ -5,6 +5,7 @@ import 'package:widget_to_marker/widget_to_marker.dart';
 
 import '../../ui/views/map_screen/widget/marker_widget.dart';
 
+/// generates a custom marker for the map using a widget that's transformed into a [BitmapDescriptor]
 Future<Marker> generateMarker({
   required String markerId,
   required LatLng position,

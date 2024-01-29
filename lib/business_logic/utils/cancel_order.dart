@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../providers/map_provider.dart';
 import '../providers/order_provider.dart';
 
+/// cancels the current order and resets both main app providers
 void cancelActiveOrder(BuildContext context) {
   final OrderProvider orderProvider = Provider.of<OrderProvider>(
     context,

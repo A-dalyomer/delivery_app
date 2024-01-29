@@ -1,6 +1,8 @@
 import 'package:geolocator/geolocator.dart';
 
+/// Handles location services
 class LocationProvider {
+  /// Requests the current user location from device native APIs
   static Future<Position> determineUserLocation() async {
     /// check for location service state
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();

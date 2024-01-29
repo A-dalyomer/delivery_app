@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 
+/// A custom route that provides a slide up and down animation on opening and closing a route
 Route<String> animatedRoute(Widget newPage) {
   return PageRouteBuilder<String>(
     pageBuilder: (context, animation, secondaryAnimation) => newPage,

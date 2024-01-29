@@ -179,7 +179,7 @@ class MapProvider extends ChangeNotifier {
       print("total destinations: ${destinations.length}");
     }
 
-    /// prepare the polyline data
+    /// prepare the polyline data with the selected provider type
     MapServices mapServices = MapServices();
     polylineCoordinates = await mapServices.getRoute(
       apiMode: RouteApiMode.osrm,
