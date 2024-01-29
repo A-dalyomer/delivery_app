@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../business_logic/constants/const_colors.dart';
 
-/// TODO: fix the unused title
 /// Button widget used for secondary logic in the screen
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
@@ -25,14 +24,14 @@ class SecondaryButton extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(26),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
             vertical: 10,
             horizontal: 28,
           ),
           child: Text(
-            "-10",
-            style: TextStyle(
+            title,
+            style: const TextStyle(
               color: ColorsManager.white,
             ),
           ),
