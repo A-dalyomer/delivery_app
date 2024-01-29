@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../utils/generate_marker.dart';
+import '../../services/map/generate_marker.dart';
 
 class MapProvider extends ChangeNotifier {
   MapProvider() {
