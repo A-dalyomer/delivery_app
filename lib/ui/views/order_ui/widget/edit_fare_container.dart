@@ -29,7 +29,7 @@ class EditFareContainer extends StatelessWidget {
           return Column(
             children: [
               Text(
-                "Offered ride fair: \$$offeredPrice",
+                "Offered ride fare: \$$offeredPrice",
                 style: const TextStyle(
                   color: ColorsManager.black,
                   fontWeight: FontWeight.bold,
