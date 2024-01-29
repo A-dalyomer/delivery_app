@@ -14,21 +14,23 @@ class OrderProgressingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    OrderProvider orderProvider = Provider.of<OrderProvider>(context);
-
-    switch (orderProvider.activeStep) {
-      case OrderSteps.pickingPickupLocation:
-        return const PickupLocationOrderUI();
-      case OrderSteps.pickingDestination:
-        return const DestinationLocationOrderUI();
-      case OrderSteps.receiverInfo:
-        return const ReceiverInfoOrderUI();
-      case OrderSteps.confirmDetails:
-        return const ConfirmDetailsOrderUI();
-      case OrderSteps.rideNow:
-        return const RideNowOrderUI();
-      case OrderSteps.waitingOffer:
-        return const WaitingOfferOrderUI();
-    }
+    return Consumer<OrderProvider>(
+      builder: (context, orderProvider, child) {
+        switch (orderProvider.activeStep) {
+          case OrderSteps.pickingPickupLocation:
+            return const PickupLocationOrderUI();
+          case OrderSteps.pickingDestination:
+            return const DestinationLocationOrderUI();
+          case OrderSteps.receiverInfo:
+            return const ReceiverInfoOrderUI();
+          case OrderSteps.confirmDetails:
+            return const ConfirmDetailsOrderUI();
+          case OrderSteps.rideNow:
+            return const RideNowOrderUI();
+          case OrderSteps.waitingOffer:
+            return const WaitingOfferOrderUI();
+        }
+      },
+    );
   }
 }
