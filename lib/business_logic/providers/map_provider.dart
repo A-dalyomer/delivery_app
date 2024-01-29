@@ -203,6 +203,7 @@ class MapProvider extends ChangeNotifier {
     showingMap = true;
     markers.clear();
     polyLines.clear();
+    notifyListeners();
     getUserLocation();
   }
 }
