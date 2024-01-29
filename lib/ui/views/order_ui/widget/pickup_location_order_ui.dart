@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../business_logic/providers/map_provider.dart';
 import '../../../../business_logic/providers/order_provider.dart';
+import '../../../../business_logic/utils/enums.dart';
 import '../../../widget/destination_field.dart';
 
 class PickupLocationOrderUI extends StatelessWidget {

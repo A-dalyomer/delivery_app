@@ -21,3 +21,6 @@ enum RideType { motor, truck }
 /// the [osrm] is free to use api
 /// the [google] is paid per request api
 enum RouteApiMode { osrm, google }
+
+/// used to indicate the [DestinationField] UI type
+enum FieldType { pickUp, destination }
