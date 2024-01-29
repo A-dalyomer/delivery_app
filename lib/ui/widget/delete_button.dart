@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// An icon button with delete icon inside
+/// calls the provided [onTap] that provides the deletion logic
 class DeleteButton extends StatefulWidget {
   const DeleteButton({super.key, this.onTap});
   final VoidCallback? onTap;

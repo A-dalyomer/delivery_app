@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../business_logic/constants/const_colors.dart';
 
+/// TODO: fix the unused title
+/// Button widget used for secondary logic in the screen
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
     super.key,

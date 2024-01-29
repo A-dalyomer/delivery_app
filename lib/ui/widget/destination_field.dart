@@ -5,8 +5,11 @@ import 'package:bloomdeliveyapp/ui/widget/delete_button.dart';
 import 'package:bloomdeliveyapp/ui/widget/favourite_button.dart';
 import 'package:flutter/material.dart';
 
+/// TODO: move to enums
 enum FieldType { pickUp, destination }
 
+/// A customizable [TextField] widget themed with the app design and ui logic parameters
+/// logic ui parameters includes enabling and disabling location related logics
 class DestinationField extends StatelessWidget {
   const DestinationField({
     super.key,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../business_logic/constants/const_colors.dart';
 
+/// Simple close screen button themed with the app design
 class CloseWidgetButton extends StatelessWidget {
   const CloseWidgetButton({super.key});
 

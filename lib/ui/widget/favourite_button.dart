@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Simple toggle button for favourite icon
 class FavouriteButton extends StatefulWidget {
   const FavouriteButton({super.key, this.onTap});
   final Function(bool)? onTap;

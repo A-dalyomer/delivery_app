@@ -1,6 +1,7 @@
 import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
 import 'package:flutter/material.dart';
 
+/// A customizable [TextField] widget with the app design theme
 class GeneralTextField extends StatelessWidget {
   const GeneralTextField({
     super.key,

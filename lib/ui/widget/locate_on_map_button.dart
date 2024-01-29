@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'color_flag.dart';
 
+/// Button widget used for enabling the destination selection mode on the map from the parent widget
 class LocateOnMapButton extends StatelessWidget {
   const LocateOnMapButton({super.key, required this.onTap});
   final VoidCallback? onTap;

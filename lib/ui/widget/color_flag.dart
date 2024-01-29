@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Simple widget for presenting a decoration flag on a widget
 class ColorFlag extends StatelessWidget {
   const ColorFlag({super.key, required this.color, this.size});
   final Color color;

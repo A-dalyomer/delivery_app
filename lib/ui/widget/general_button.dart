@@ -1,6 +1,7 @@
 import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
 import 'package:flutter/material.dart';
 
+/// A button widget themed with app design
 class GeneralButton extends StatelessWidget {
   const GeneralButton({super.key, required this.title, this.onTap});
   final String title;

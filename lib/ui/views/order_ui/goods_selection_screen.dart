@@ -4,6 +4,8 @@ import 'package:bloomdeliveyapp/ui/widget/general_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+/// meant to present the available good types and provide the ability to choose one
+/// then returns the selected type as a result to the navigation handler
 class GoodsSelectionScreen extends StatefulWidget {
   const GoodsSelectionScreen({super.key});
 

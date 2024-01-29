@@ -12,8 +12,12 @@ import 'package:provider/provider.dart';
 
 import '../order_ui/order_progressing_widget.dart';
 
+/// A key for accessing the scaffold state from multiple places in the project
 final scaffoldKey2 = GlobalKey<ScaffoldState>();
 
+/// The main map screen which provides the main app [Provider]s to their child widgets
+/// Mainly includes the following widgets:
+/// [MapWidget], [GetLocationButton], [OrderProgressingWidget], [DestinationField] and [OrderBackButton]
 class DeliveryMapScreen extends StatefulWidget {
   const DeliveryMapScreen({Key? key}) : super(key: key);
   @override

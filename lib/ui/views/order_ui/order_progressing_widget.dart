@@ -9,6 +9,8 @@ import 'package:bloomdeliveyapp/ui/views/order_ui/widget/waiting_offer_order_ui.
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+/// The parent logic widget for the order logic
+/// which handles the order steps presentation logic
 class OrderProgressingWidget extends StatelessWidget {
   const OrderProgressingWidget({super.key});
 
