@@ -54,11 +54,13 @@ class _LoginState extends State<Login> {
           child: Consumer<LoginScreenViewModel>(
               builder: (context, loginScreenViewModel, child) {
             if (loginScreenViewModel.isLoggedIn) {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) => const DeliveryMapScreen(),
-                ),
-              );
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const DeliveryMapScreen(),
+                  ),
+                );
+              });
             }
             return Scaffold(
               body: Container(
