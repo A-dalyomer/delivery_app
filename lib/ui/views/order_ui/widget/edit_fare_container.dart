@@ -60,6 +60,7 @@ class EditFareContainer extends StatelessWidget {
                     child: TextField(
                       controller: fareFieldController,
                       textAlign: TextAlign.center,
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: ColorsManager.lightTeal,
