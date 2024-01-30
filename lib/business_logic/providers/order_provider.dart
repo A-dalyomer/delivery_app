@@ -142,8 +142,9 @@ class OrderProvider extends ChangeNotifier {
         (rideType == RideType.truck
             ? AppMetrics.costPerMeterTruck
             : AppMetrics.costPerMeterMotor);
+    String formattedRecommendedFare = rideRecommendedFare.toStringAsFixed(2);
     final TextEditingController fairController = TextEditingController(
-      text: rideRecommendedFare.toStringAsFixed(2),
+      text: formattedRecommendedFare,
     );
     showDialog(
       context: context,
@@ -151,7 +152,7 @@ class OrderProvider extends ChangeNotifier {
       builder: (context) {
         return SelectFairDialog(
           textEditingController: fairController,
-          recommendedFare: "${AppMetrics.currency}$rideRecommendedFare",
+          recommendedFare: "${AppMetrics.currency}$formattedRecommendedFare",
           rideType: rideType,
           onAccepted: () {
             if (kDebugMode) {
