@@ -7,46 +7,22 @@ class ThemeManager {
     Color primaryColor = ColorsManager.green;
     return ThemeData(
       scaffoldBackgroundColor: ColorsManager.lightTeal,
-      appBarTheme: AppBarTheme(
-        elevation: 0,
-        color: Colors.white,
-        centerTitle: true,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
-        toolbarTextStyle: TextTheme(
-          titleSmall: const TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-            fontFamily: 'Tajawal',
-          ),
-          headlineSmall: const TextStyle().copyWith(
-            color: Colors.black,
-            fontFamily: 'Tajawal',
-            fontWeight: FontWeight.bold,
-            //height: 2,
-          ),
-        ).bodyMedium,
-        titleTextStyle: TextTheme(
-          titleSmall: const TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-            fontFamily: 'Tajawal',
-          ),
-          headlineSmall: const TextStyle().copyWith(
-            color: Colors.black,
-            fontFamily: 'Tajawal',
-            fontWeight: FontWeight.bold,
-            //height: 2,
-          ),
-        ).titleLarge,
-      ),
       primaryColor: primaryColor,
       brightness: Brightness.light,
       hintColor: ColorsManager.greyText,
       fontFamily: 'Tajawal',
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(color: ColorsManager.black),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        contentPadding:
+            const EdgeInsetsDirectional.symmetric(horizontal: 12, vertical: 8),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: ColorsManager.green),
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
       buttonTheme: ButtonThemeData(
         buttonColor: primaryColor,
         disabledColor: Colors.grey,
