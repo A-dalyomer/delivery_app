@@ -1,4 +1,3 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
 import 'package:bloomdeliveyapp/business_logic/providers/map_provider.dart';
 import 'package:bloomdeliveyapp/business_logic/providers/order_provider.dart';
 import 'package:bloomdeliveyapp/business_logic/utils/enums.dart';
@@ -41,43 +40,26 @@ class DeliveryMapScreenState extends State<DeliveryMapScreen> {
                 (BuildContext context, MapProvider mapProvider, Widget? child) {
               return Stack(
                 children: [
-                  Column(
-                    children: [
-                      Flexible(
-                        child: AnimatedSize(
-                          duration: const Duration(milliseconds: 300),
-                          child: mapProvider.showingMap
-                              ? Stack(
-                                  children: [
-                                    MapWidget(mapProvider: mapProvider),
-                                    const Align(
-                                      alignment: AlignmentDirectional.bottomEnd,
-                                      child: GetLocationButton(),
-                                    ),
-                                  ],
-                                )
-                              : const SizedBox.shrink(),
-                        ),
+                  Column(children: [
+                    Flexible(
+                      child: AnimatedSize(
+                        duration: const Duration(milliseconds: 300),
+                        child: mapProvider.showingMap
+                            ? Stack(children: [
+                                MapWidget(mapProvider: mapProvider),
+                                const Align(
+                                  alignment: AlignmentDirectional.bottomEnd,
+                                  child: GetLocationButton(),
+                                ),
+                              ])
+                            : const SizedBox.shrink(),
                       ),
-                      AnimatedSize(
-                        duration: const Duration(milliseconds: 200),
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: ColorsManager.lightTeal,
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.only(
-                              top: 8,
-                              bottom: 26,
-                              left: 26,
-                              right: 26,
-                            ),
-                            child: OrderProgressingWidget(),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                    const AnimatedSize(
+                      duration: Duration(milliseconds: 200),
+                      child: OrderProgressingWidget(),
+                    ),
+                  ]),
                   if (mapProvider.mapSelectionMode == MapSelectionMode.pickup &&
                       mapProvider.showingMap)
                     Positioned(
