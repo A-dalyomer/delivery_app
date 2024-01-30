@@ -8,6 +8,7 @@ I made this app utilizing my experience in the flutter framework, dart and progr
 hoping it meets the requirements you needed for examining my experience.
 
 You can check the [Changes Made] and the git log for more details of changes i made in the project.
+Plus you can check the [Key features] section for what features the app provides.
 
 But when it came to design, i could have had a more exact design measurements but with responsiveness,
 but the wireframe that was designed on a website that does not provide me with any tools to get 
@@ -16,12 +17,14 @@ the screen_util package or a similar one for faster responsive UI development,
 so i had to work on an approximate values, I am only writing this to explain why i couldn't afford 
 the exact design sizes and colors where i could.
 
-although this app is currently using a good architecture, but i would have preferred using the fdd
+Although this app is currently using a good architecture, but i would have preferred using the fdd
 architecture, as it's better handled on larger applications than the current one.
 since it separate feature components and logic in a separate folder from the other features,
 meaning easier code management and faster debugging, whilst the current one is also good architecture,
 it would get somewhat non ordered as the project keeps growing.
 
+For final thoughts, we could add a log history for the user orders as we now have all the data
+saved in the order provider at the last order stet.
 
 
 ## Changes Made
@@ -41,6 +44,8 @@ it would get somewhat non ordered as the project keeps growing.
 - Maintained clean code principles when creating widgets and linking logic to them.
 - Route is calculated in real time as requested on each destination add or remove.
 - Provided two different ways to load the route on the map, the free OSRM API and Google maps API.
+- Used DTOs for storing state objects and easily transferring them.
+- Created enums for using enhancing app logic with understandable and easier to handle logic.
 - Refactored the already in-project files.
 - Removed the unused dependencies.
 - If you notice the floating texts in the text field it's caused by the current set font in the app.
