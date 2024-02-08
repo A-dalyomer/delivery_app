@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:bloomdeliveyapp/business_logic/utils/theme_manager.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'business_logic/utils/http_overrides.dart';
@@ -24,9 +23,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     ThemeManager themeManager = ThemeManager();
     return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
       debugShowCheckedModeBanner: false,
       theme: themeManager.appLightTheme(),
       home: const Splash(),
