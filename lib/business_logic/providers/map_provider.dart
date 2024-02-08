@@ -1,7 +1,7 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
-import 'package:bloomdeliveyapp/business_logic/utils/enums.dart';
-import 'package:bloomdeliveyapp/services/get_user_location.dart';
-import 'package:bloomdeliveyapp/services/map/map_services.dart';
+import 'package:deliveyapp/business_logic/constants/const_colors.dart';
+import 'package:deliveyapp/business_logic/utils/enums.dart';
+import 'package:deliveyapp/services/get_user_location.dart';
+import 'package:deliveyapp/services/map/map_services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';

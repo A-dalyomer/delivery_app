@@ -1,5 +1,5 @@
-import 'package:bloomdeliveyapp/business_logic/providers/map_provider.dart';
-import 'package:bloomdeliveyapp/business_logic/utils/enums.dart';
+import 'package:deliveyapp/business_logic/providers/map_provider.dart';
+import 'package:deliveyapp/business_logic/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

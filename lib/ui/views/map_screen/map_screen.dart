@@ -1,10 +1,10 @@
-import 'package:bloomdeliveyapp/business_logic/providers/map_provider.dart';
-import 'package:bloomdeliveyapp/business_logic/providers/order_provider.dart';
-import 'package:bloomdeliveyapp/business_logic/utils/enums.dart';
-import 'package:bloomdeliveyapp/ui/views/map_screen/widget/get_location_button.dart';
-import 'package:bloomdeliveyapp/ui/views/map_screen/widget/map_widget.dart';
-import 'package:bloomdeliveyapp/ui/views/order_ui/widget/order_back_button.dart';
-import 'package:bloomdeliveyapp/ui/widget/destination_field.dart';
+import 'package:deliveyapp/business_logic/providers/map_provider.dart';
+import 'package:deliveyapp/business_logic/providers/order_provider.dart';
+import 'package:deliveyapp/business_logic/utils/enums.dart';
+import 'package:deliveyapp/ui/views/map_screen/widget/get_location_button.dart';
+import 'package:deliveyapp/ui/views/map_screen/widget/map_widget.dart';
+import 'package:deliveyapp/ui/views/order_ui/widget/order_back_button.dart';
+import 'package:deliveyapp/ui/widget/destination_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';

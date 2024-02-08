@@ -1,8 +1,8 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
-import 'package:bloomdeliveyapp/ui/views/map_screen/map_screen.dart';
-import 'package:bloomdeliveyapp/ui/widget/color_flag.dart';
-import 'package:bloomdeliveyapp/ui/widget/delete_button.dart';
-import 'package:bloomdeliveyapp/ui/widget/favourite_button.dart';
+import 'package:deliveyapp/business_logic/constants/const_colors.dart';
+import 'package:deliveyapp/ui/views/map_screen/map_screen.dart';
+import 'package:deliveyapp/ui/widget/color_flag.dart';
+import 'package:deliveyapp/ui/widget/delete_button.dart';
+import 'package:deliveyapp/ui/widget/favourite_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../business_logic/utils/enums.dart';

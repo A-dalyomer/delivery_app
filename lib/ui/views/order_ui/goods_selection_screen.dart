@@ -1,6 +1,6 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
-import 'package:bloomdeliveyapp/business_logic/constants/const_dummy_data.dart';
-import 'package:bloomdeliveyapp/ui/widget/general_button.dart';
+import 'package:deliveyapp/business_logic/constants/const_colors.dart';
+import 'package:deliveyapp/business_logic/constants/const_dummy_data.dart';
+import 'package:deliveyapp/ui/widget/general_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

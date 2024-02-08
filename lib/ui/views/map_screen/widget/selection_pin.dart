@@ -1,4 +1,4 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_assets.dart';
+import 'package:deliveyapp/business_logic/constants/const_assets.dart';
 import 'package:flutter/material.dart';
 
 class SelectionPin extends StatelessWidget {

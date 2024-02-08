@@ -1,5 +1,5 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
-import 'package:bloomdeliveyapp/services/order/cancel_order.dart';
+import 'package:deliveyapp/business_logic/constants/const_colors.dart';
+import 'package:deliveyapp/services/order/cancel_order.dart';
 import 'package:flutter/material.dart';
 
 class CancelOrderButton extends StatelessWidget {

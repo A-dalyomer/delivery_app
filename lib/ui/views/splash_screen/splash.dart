@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:bloomdeliveyapp/ui/views/map_screen/map_screen.dart';
+import 'package:deliveyapp/ui/views/map_screen/map_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

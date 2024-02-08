@@ -1,7 +1,7 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
-import 'package:bloomdeliveyapp/business_logic/providers/map_provider.dart';
-import 'package:bloomdeliveyapp/business_logic/utils/enums.dart';
-import 'package:bloomdeliveyapp/ui/views/map_screen/widget/selection_pin.dart';
+import 'package:deliveyapp/business_logic/constants/const_colors.dart';
+import 'package:deliveyapp/business_logic/providers/map_provider.dart';
+import 'package:deliveyapp/business_logic/utils/enums.dart';
+import 'package:deliveyapp/ui/views/map_screen/widget/selection_pin.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

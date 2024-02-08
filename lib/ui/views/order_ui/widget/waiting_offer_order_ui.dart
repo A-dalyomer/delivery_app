@@ -1,7 +1,7 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
-import 'package:bloomdeliveyapp/business_logic/providers/order_provider.dart';
-import 'package:bloomdeliveyapp/ui/views/order_ui/widget/cancel_order_button.dart';
-import 'package:bloomdeliveyapp/ui/views/order_ui/widget/edit_fare_container.dart';
+import 'package:deliveyapp/business_logic/constants/const_colors.dart';
+import 'package:deliveyapp/business_logic/providers/order_provider.dart';
+import 'package:deliveyapp/ui/views/order_ui/widget/cancel_order_button.dart';
+import 'package:deliveyapp/ui/views/order_ui/widget/edit_fare_container.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

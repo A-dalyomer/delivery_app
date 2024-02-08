@@ -1,4 +1,4 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_colors.dart';
+import 'package:deliveyapp/business_logic/constants/const_colors.dart';
 import 'package:flutter/material.dart';
 
 /// A button widget themed with app design

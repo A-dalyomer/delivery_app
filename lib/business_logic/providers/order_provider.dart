@@ -1,10 +1,10 @@
-import 'package:bloomdeliveyapp/business_logic/models/order/order_model.dart';
-import 'package:bloomdeliveyapp/business_logic/models/order/receiver_info_model.dart';
-import 'package:bloomdeliveyapp/business_logic/utils/animated_route.dart';
-import 'package:bloomdeliveyapp/services/order/cancel_order.dart';
-import 'package:bloomdeliveyapp/business_logic/utils/enums.dart';
-import 'package:bloomdeliveyapp/ui/views/order_ui/goods_selection_screen.dart';
-import 'package:bloomdeliveyapp/ui/views/order_ui/widget/select_fair_dialog.dart';
+import 'package:deliveyapp/business_logic/models/order/order_model.dart';
+import 'package:deliveyapp/business_logic/models/order/receiver_info_model.dart';
+import 'package:deliveyapp/business_logic/utils/animated_route.dart';
+import 'package:deliveyapp/services/order/cancel_order.dart';
+import 'package:deliveyapp/business_logic/utils/enums.dart';
+import 'package:deliveyapp/ui/views/order_ui/goods_selection_screen.dart';
+import 'package:deliveyapp/ui/views/order_ui/widget/select_fair_dialog.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';

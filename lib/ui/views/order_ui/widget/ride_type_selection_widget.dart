@@ -1,6 +1,6 @@
-import 'package:bloomdeliveyapp/business_logic/providers/map_provider.dart';
-import 'package:bloomdeliveyapp/business_logic/providers/order_provider.dart';
-import 'package:bloomdeliveyapp/ui/views/order_ui/widget/ride_type_item.dart';
+import 'package:deliveyapp/business_logic/providers/map_provider.dart';
+import 'package:deliveyapp/business_logic/providers/order_provider.dart';
+import 'package:deliveyapp/ui/views/order_ui/widget/ride_type_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

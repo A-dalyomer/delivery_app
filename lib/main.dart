@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:bloomdeliveyapp/business_logic/utils/theme_manager.dart';
+import 'package:deliveyapp/business_logic/utils/theme_manager.dart';
 import 'package:flutter/material.dart';
 
 import 'business_logic/utils/http_overrides.dart';

@@ -1,5 +1,5 @@
-import 'package:bloomdeliveyapp/business_logic/constants/const_metrics.dart';
-import 'package:bloomdeliveyapp/business_logic/utils/enums.dart';
+import 'package:deliveyapp/business_logic/constants/const_metrics.dart';
+import 'package:deliveyapp/business_logic/utils/enums.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../business_logic/constants/const_colors.dart';
