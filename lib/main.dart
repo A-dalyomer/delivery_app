@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:bloomdeliveyapp/business_logic/utils/theme_manager.dart';
-import 'package:bloomdeliveyapp/services/service_locator.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -10,15 +9,7 @@ import 'ui/views/splash_screen/splash.dart';
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();
-  setupServiceLocator();
-  runApp(EasyLocalization(
-    supportedLocales: const [Locale('en'), Locale('ar')],
-    path: 'assets/translations',
-    fallbackLocale: const Locale('en'),
-    startLocale: const Locale('en'),
-    useOnlyLangCode: true,
-    child: const MyApp(),
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
