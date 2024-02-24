@@ -1,13 +1,9 @@
-import 'dart:io';
-
 import 'package:deliveyapp/business_logic/utils/theme_manager.dart';
 import 'package:flutter/material.dart';
 
-import 'business_logic/utils/http_overrides.dart';
 import 'ui/views/splash_screen/splash.dart';
 
 void main() {
-  HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
 }
 

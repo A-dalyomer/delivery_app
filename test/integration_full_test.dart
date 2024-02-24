@@ -17,7 +17,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('order widget tests', () {
+  group('integration (logic with widget) tests', () {
     /// adds the provided widget to the widget tree for testing
     Future<void> pumpMapScreen(WidgetTester tester, Widget widget) async {
       await tester.pumpWidget(

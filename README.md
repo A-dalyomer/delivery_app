@@ -1,9 +1,11 @@
-## bloomdeliveyapp
+## DeliveryApp
+
+![alt text](https://github.com/A-dalyomer/delivery_app/blob/main/cover.jpg?raw=true)
 
 
 ## summary
 
-This project is designed to accomplish The assigned task to me by Bloom Techno company.
+This project is designed to accomplish The assigned task to me by a company.
 I made this app utilizing my experience in the flutter framework, dart and programming concepts,
 hoping it meets the requirements you needed for examining my experience.
 

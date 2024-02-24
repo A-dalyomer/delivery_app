@@ -10,7 +10,6 @@ class ThemeManager {
       primaryColor: primaryColor,
       brightness: Brightness.light,
       hintColor: ColorsManager.greyText,
-      fontFamily: 'Tajawal',
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
           borderSide: const BorderSide(color: ColorsManager.black),
@@ -33,20 +32,7 @@ class ThemeManager {
         buttonPadding: EdgeInsets.only(left: 8, right: 8),
         buttonTextTheme: ButtonTextTheme.normal,
       ),
-      textTheme: TextTheme(
-        titleSmall: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontFamily: 'Tajawal',
-        ),
-        bodyMedium: const TextStyle(
-          fontSize: 14,
-          fontFamily: 'Tajawal',
-        ),
-        labelLarge: TextStyle(
-          fontFamily: 'Tajawal',
-          color: primaryColor,
-        ),
-      ).apply(
+      textTheme: const TextTheme().apply(
         bodyColor: ColorsManager.black,
       ),
     );
